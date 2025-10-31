@@ -16,7 +16,7 @@ last_updated: 2025-10-31
 | 192.168.1.11       | pve01                | Proxmox Node 1             | ✅ aktiv |
 | 192.168.1.12       | pve02                | Proxmox Node 2             | ✅ aktiv |
 | 192.168.1.15       | sw01                 | Switch Core                | ✅ aktiv |
-| 192.168.1.19       | —                    | Autodiscovered             | ⚠️ unbekannt |
+| 192.168.1.19       | PBS                    | Proxmox baxkup             | ✅ aktiv |
 | 192.168.1.20       | docker-core-dns          | Core Docker DNS           | ✅ aktiv |
 | 192.168.1.21       | docker-monitoring    | Monitoring Stack           | ✅ aktiv |
 | 192.168.1.22       | reverse-proxy        | Reverse Proxy (Zoraxy/Nginx) | ✅ aktiv |
@@ -27,16 +27,17 @@ last_updated: 2025-10-31
 | 192.168.1.44       | ansible              | Automatisierung (Ansible)  | ✅ aktiv |
 | 192.168.1.45       | docker01             | Experimentelle Container   | ✅ aktiv |
 | 192.168.1.46       | idk                  | Unbekannt / Testsystem     | ⚠️ prüfen |
-| 192.168.1.47–.53   | —                    | Frei / Reserviert (7 IPs)  | 🟡 frei |
 | 192.168.1.54       | sw02                 | Switch Secondary           | ✅ aktiv |
-| 192.168.1.55–.60   | —                    | Frei / Reserviert (6 IPs)  | 🟡 frei |
 | 192.168.1.61       | nodejs-dev           | Entwicklungsserver (Node.js) | ✅ aktiv |
-| 192.168.1.62–.69   | —                    | Frei / Reserviert (8 IPs)  | 🟡 frei |
 | 192.168.1.70       | influxdb             | Zeitreihendatenbank (InfluxDB) | ✅ aktiv |
 | 192.168.1.71       | grafana              | Dashboard (Grafana)        | ✅ aktiv |
 | 192.168.1.79       | hue01                | Smart Home (Philips Hue)   | ✅ aktiv |
-| 192.168.1.88       | pdm                  | PDM / Device Management    | ✅ aktiv |
-| 192.168.1.98–.107  | —                    | Autodiscovered (mehrere)   | ⚠️ prüfen |
+| 192.168.1.88       | PDC                  | Proxmox Datacenter    | ✅ aktiv |
+| 192.168.1.98       | proxy                |  Squid proxy | 	🚩 Down
+| 192.168.1.99       | Web-home02           | Webserver 2          | ✅ aktiv |
+| 192.168.1.100  | —                    | Autodiscovered    | ⚠️ prüfen |
+| 192.168.1.101  | n8n           | Workflows | ✅ aktiv |
+| 192.168.1.102–.107  | —                    | Autodiscovered (mehrere)   | ⚠️ prüfen |
 | 192.168.1.131      | markus-pc            | Hauptarbeitsplatz          | ✅ aktiv |
 | 192.168.1.175      | —                    | Autodiscovered             | ⚠️ unbekannt |
 | 192.168.1.177      | nas01                | Storage / NAS              | ✅ aktiv |
