@@ -13,7 +13,8 @@ Dieses Repository enthält Netzpläne, Konfigurationen, Automatisierungen und Mo
 
 **Subnetz:** `192.168.1.0/24`  
 **Gateway:** `192.168.1.1`  
-**DNS:** `192.168.1.5 (AdGuard)`  
+**DNS01:** `192.168.1.20`
+**DNS02:** `192.168.1.5 (AdGuard)`  
 **Verfügbare Hosts:** 254
 
 ---
