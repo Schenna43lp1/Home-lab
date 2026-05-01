@@ -1,58 +1,88 @@
-# Homelab Infrastruktur-Dokumentation
+# Homelab-Dokumentation
 
-Stand: 01.05.2026
+Stand: 01.05.2026  
+Netz: `192.168.1.0/24`
 
-Dieses Repository dokumentiert die aktuelle Homelab-Umgebung mit Proxmox-Nodes, LXC-Containern, IP-Adressen, Diensten, Backups und offenen Aufgaben.
+Dieses Repository ist die zentrale Dokumentation für das Homelab.  
+Ziel: Schnell sehen, **welcher Dienst wo läuft**, welche IP genutzt wird und welche Systeme kritisch sind.
 
-## Inhalt
+---
 
-| Datei | Zweck |
+## Schnellübersicht
+
+| Bereich | Systeme |
 |---|---|
-| `docs/container-uebersicht.md` | Übersicht aller LXC-Container pro Proxmox-Node |
-| `docs/ip-plan.md` | Menschlich lesbarer IP-Plan |
-| `data/ip-plan.csv` | IP-Plan als CSV für Import/Weiterverarbeitung |
-| `docs/dienste.md` | Dienste nach Funktion gruppiert |
-| `docs/backup-monitoring.md` | Backup- und Monitoring-Übersicht |
-| `docs/todos.md` | Offene Aufgaben und bekannte Probleme |
-| `scripts/list-lxc-ips.sh` | Script zum Auslesen der Container-IPs auf einem Proxmox-Node |
+| Virtualisierung | pve01, pve02, pve03 |
+| DNS | AdGuard, DNS02, Unbound, PowerDNS |
+| Monitoring | Uptime Kuma, docker-Monitoring, Beszel, Patchmon |
+| Datenbanken | MariaDB01, MariaDB02, MariaDB03 |
+| Backup | Proxmox Backup Server, db-backup01 |
+| Proxy / HA | proxy01, proxy02, Keepalived VIP, Reverse Proxy |
+| Management | NetBox, Omada, Proxmox Datacenter Manager, Git, Ansible |
+
+---
 
 ## Proxmox Nodes
 
-| Node | IP | Rolle |
-|---|---:|---|
-| pve01 | 192.168.1.11 | PBS, Uptime Kuma, MariaDB01 |
-| pve02 | 192.168.1.12 | Monitoring, Web, Proxy, Git, MariaDB02 |
-| pve03 | 192.168.1.13 | DNS, NetBox, MariaDB03, Proxy01, DB Backup |
+| Node | IP | Hauptrolle | Kritische Dienste |
+|---|---:|---|---|
+| pve01 | 192.168.1.11 | Backup / Datenbank | PBS, Uptime Kuma, MariaDB01 |
+| pve02 | 192.168.1.12 | Services / Management | Monitoring, Web, Git, AdGuard, MariaDB02, proxy02 |
+| pve03 | 192.168.1.13 | Infrastruktur / DNS / HA | PowerDNS, NetBox, MariaDB03, proxy01, DB Backup |
 
-## Wichtiger Hinweis
+---
 
-Docker-Bridge-IPs wie `172.17.0.1`, `172.18.0.1`, `172.19.0.1` usw. werden nicht im Haupt-IP-Plan geführt. Dokumentiert werden primär die echten LAN-Adressen aus `192.168.1.0/24`.
+## Wichtigste Dateien
 
-## Schnellstart
+| Datei | Beschreibung |
+|---|---|
+| `docs/container-uebersicht.md` | Alle LXC-Container nach Proxmox-Node |
+| `docs/ip-plan.md` | IP-Plan als Markdown |
+| `data/ip-plan.csv` | IP-Plan als CSV |
+| `docs/dienste.md` | Dienste nach Funktion gruppiert |
+| `docs/kritische-systeme.md` | Kritische Systeme und Ausfallwirkung |
+| `docs/backup-monitoring.md` | Backup- und Monitoring-Status |
+| `docs/betrieb.md` | Nützliche Betriebsbefehle |
+| `docs/todos.md` | Offene Aufgaben |
+| `docs/changelog.md` | Änderungen an der Dokumentation |
+| `scripts/list-lxc-ips.sh` | Script zum Auslesen von LXC-IP-Adressen |
 
-Repo klonen:
+---
+
+## Legende
+
+| Begriff | Bedeutung |
+|---|---|
+| `running` | Container läuft |
+| `stopped` | Container ist gestoppt |
+| `kritisch` | Ausfall betrifft wichtige Homelab-Funktionen |
+| `VIP` | Virtuelle IP, meistens durch Keepalived |
+| `Docker-IP` | Interne Docker-Bridge-IP, nicht im Haupt-IP-Plan führen |
+
+---
+
+## Wichtige Regeln
+
+1. **Jede LAN-IP darf nur einmal vergeben sein.**
+2. **Docker-Bridge-IPs wie `172.17.0.1` werden nicht im Haupt-IP-Plan geführt.**
+3. Neue Container immer in `docs/container-uebersicht.md` eintragen.
+4. Neue IPs immer in `docs/ip-plan.md` und `data/ip-plan.csv` eintragen.
+5. Kritische Dienste zusätzlich in `docs/kritische-systeme.md` dokumentieren.
+6. Änderungen kurz in `docs/changelog.md` eintragen.
+
+---
+
+## Aktueller Hinweis
+
+Der frühere IP-Konflikt zwischen `nodjs-dev` und `mariadb02` auf `192.168.1.61` wurde als erledigt markiert.  
+Die neue IP von `nodjs-dev` sollte noch sauber in `docs/ip-plan.md` und `data/ip-plan.csv` eingetragen werden, falls noch nicht erledigt.
+
+---
+
+## Repo aktualisieren
 
 ```bash
-git clone <DEIN-REPO-LINK>
-cd homelab-doku
+git add .
+git commit -m "Update homelab documentation"
+git push
 ```
-
-Script ausführbar machen:
-
-```bash
-chmod +x scripts/list-lxc-ips.sh
-```
-
-Auf einem Proxmox-Node ausführen:
-
-```bash
-./scripts/list-lxc-ips.sh
-```
-
-## Pflege-Regeln
-
-1. Neue Container immer in `docs/container-uebersicht.md` eintragen.
-2. Neue IPs immer zusätzlich in `docs/ip-plan.md` und `data/ip-plan.csv` eintragen.
-3. Kritische Dienste immer in `docs/dienste.md` ergänzen.
-4. Backup- und Monitoring-Status in `docs/backup-monitoring.md` aktuell halten.
-5. Offene Baustellen in `docs/todos.md` dokumentieren.
