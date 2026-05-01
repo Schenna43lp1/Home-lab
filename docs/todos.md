@@ -2,9 +2,9 @@
 
 ## Hoch
 
-- [ ] IP-Konflikt beheben: `nodjs-dev` und `mariadb02` zeigen beide `192.168.1.61`.
-- [ ] Prüfen, ob alle MariaDB-Nodes korrekt erreichbar sind.
-- [ ] Backup-Jobs für alle kritischen Container prüfen.
+- [x] IP-Konflikt behoben: `nodjs-dev` und `mariadb02` hatten beide `192.168.1.61`.
+- [x] Prüfen, ob alle MariaDB-Nodes korrekt erreichbar sind.
+- [x] Backup-Jobs für alle kritischen Container prüfen.
 
 ## Mittel
 
