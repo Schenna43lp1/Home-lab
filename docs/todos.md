@@ -25,5 +25,5 @@
 
 - [ ] Docker-Bridge-IPs aus Hauptdoku entfernen.
 - [ ] Dienste mit URLs ergänzen.
-- [ ] Backup-Aufbewahrung je Dienst dokumentieren.
+- [x] Backup-Aufbewahrung je Dienst dokumentiert
 - [ ] Screenshots oder Netzwerkdiagramm ergänzen.
