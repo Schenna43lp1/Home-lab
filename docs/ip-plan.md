@@ -39,7 +39,7 @@ Netzbereich: `192.168.1.0/24`
 |---:|---|---|---:|---|
 | 192.168.1.30 | web-home | pve02 | 101 | Webserver |
 | 192.168.1.31 | git.app.home | pve02 | 103 | Git |
-| 192.168.1.44 | asible | pve02 | 104 | Ansible / Semaphore |
+| 192.168.1.44 | ansible | Ansible / Semaphore |
 | 192.168.1.69 | admiral | pve03 | 103 | Web/App |
 | 192.168.1.82 | termix | pve02 | 111 | Web-Terminal |
 | 192.168.1.91 | de | pve02 | 109 | Unklar |

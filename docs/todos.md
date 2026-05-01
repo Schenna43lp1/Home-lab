@@ -3,13 +3,13 @@
 ## Hoch
 
 - [x] IP-Konflikt beheben: `nodjs-dev` und `mariadb02` hatten beide `192.168.1.61`.
-- [ ] Neue IP von `nodjs-dev` in `docs/container-uebersicht.md`, `docs/ip-plan.md` und `data/ip-plan.csv` nachtragen.
+- [x] Neue IP von `nodjs-dev` in `docs/container-uebersicht.md`, `docs/ip-plan.md` und `data/ip-plan.csv` nachtragen.
 - [ ] Prüfen, ob alle MariaDB-Nodes korrekt erreichbar sind.
 - [ ] Backup-Jobs für alle kritischen Container prüfen.
 
 ## Mittel
 
-- [ ] `asible` in `ansible` umbenennen.
+- [x] `asible` in `ansible` umbenennen.
 - [ ] Container `de` prüfen und sprechend umbenennen.
 - [ ] Gestoppte Container prüfen:
   - [ ] `web01`

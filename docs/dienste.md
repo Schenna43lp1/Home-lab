@@ -43,6 +43,6 @@
 |---|---:|---|---|
 | NetBox | 192.168.1.25 | pve03 | CT 107 |
 | Git | 192.168.1.31 | pve02 | CT 103 |
-| Ansible/Semaphore | 192.168.1.44 | pve02 | CT 104 |
+| ansible/Semaphore | 192.168.1.44 | pve02 | CT 104 |
 | Proxmox Datacenter Manager | 192.168.1.92 | pve02 | CT 108 |
 | Omada Controller | 192.168.1.189 | pve02 | CT 116 |
