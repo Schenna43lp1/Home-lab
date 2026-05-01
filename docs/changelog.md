@@ -30,3 +30,17 @@
 | mariadb03 | 192.168.1.62 | OK | offen |
 
 Hinweis: Reverse DNS/PTR ist nicht gesetzt, daher erscheint bei `nc` die Meldung `inverse host lookup failed`. Das ist für die Erreichbarkeit nicht kritisch.
+
+### Backup-Prüfung
+
+
+| Node | Backup-Job | Storage | Ergebnis |
+|---|---|---|---|
+| pve01 | backup-5dd5375b-84cf | backup-01 | OK, all 1 |
+| pve02 | backup-b219dc26-7b7e | pbs | Fast OK, CT115 proxy02 fehlt |
+| pve03 | backup-99a0d0dd-5ca9 | pbs | Fast OK, CT107 NetBox und CT113 proxy01 fehlen |
+
+Offen:
+- [ ] pve02 CT115 `proxy02` zum Backup hinzufügen
+- [ ] pve03 CT107 `netbox.app.home` zum Backup hinzufügen
+- [ ] pve03 CT113 `proxy01` zum Backup hinzufügen
