@@ -41,6 +41,6 @@ Hinweis: Reverse DNS/PTR ist nicht gesetzt, daher erscheint bei `nc` die Meldung
 | pve03 | backup-99a0d0dd-5ca9 | pbs | Fast OK, CT107 NetBox und CT113 proxy01 fehlen |
 
 Offen:
-- [ ] pve02 CT115 `proxy02` zum Backup hinzufügen
-- [ ] pve03 CT107 `netbox.app.home` zum Backup hinzufügen
-- [ ] pve03 CT113 `proxy01` zum Backup hinzufügen
+- [x] pve02 CT115 `proxy02` zum Backup hinzugefügt
+- [x] pve03 CT107 `netbox.app.home` zum Backup hinzugefügt
+- [x] pve03 CT113 `proxy01` zum Backup hinzugefügt
