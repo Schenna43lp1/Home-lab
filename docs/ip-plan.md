@@ -45,6 +45,7 @@ Netzbereich: `192.168.1.0/24`
 | 192.168.1.91 | de | pve02 | 109 | Unklar |
 | 192.168.1.92 | proxmox-datacenter-manager | pve02 | 108 | PDM |
 | 192.168.1.125 | mailarchive01 | pve03 | 105 | Mailarchiv |
+| 110 | nodjs-dev | running | 192.168.1.81 | Node.js Dev |
 
 ## Datenbanken / Backup
 
@@ -67,6 +68,4 @@ Netzbereich: `192.168.1.0/24`
 
 ## Bekannte Konflikte
 
-| IP | Konflikt |
-|---:|---|
-| 192.168.1.61 | Wird aktuell von `nodjs-dev` und `mariadb02` angezeigt. Prüfen und `nodjs-dev` auf freie IP ändern. |
+

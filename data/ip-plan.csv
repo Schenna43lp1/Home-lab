@@ -21,9 +21,8 @@ ip,hostname,node,vmid,dienst,status,notiz
 192.168.1.31,git.app.home,pve02,103,"Git-Service",running,
 192.168.1.44,asible,pve02,104,"Ansible/Semaphore",running,"Name prüfen: evtl. ansible"
 192.168.1.60,Mariadb01,pve01,105,"MariaDB Node 1",running,
-192.168.1.61,mariadb02,pve02,113,"MariaDB Node 2",running,"IP-Konflikt mit nodjs-dev prüfen"
-192.168.1.61,nodjs-dev,pve02,110,"Node.js Dev",running,"IP ändern empfohlen"
-192.168.1.62,mariadb03,pve03,102,"MariaDB Node 3",running,
+192.168.1.61,mariadb02,pve02,113,"MariaDB Node 2",running,
+192.168.1.81,nodjs-dev,pve02,110,"Node.js Dev",running,"IP-Konflikt behoben; vorher fälschlich 192.168.1.61"192.168.1.62,mariadb03,pve03,102,"MariaDB Node 3",running,
 192.168.1.69,admiral,pve03,103,"Web/App Server",running,
 192.168.1.79,patchmon,pve03,101,"Patch Monitoring",running,
 192.168.1.82,termix,pve02,111,"Web-Terminal",running,
