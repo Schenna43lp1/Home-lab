@@ -44,3 +44,43 @@ Offen:
 - [x] pve02 CT115 `proxy02` zum Backup hinzugefügt
 - [x] pve03 CT107 `netbox.app.home` zum Backup hinzugefügt
 - [x] pve03 CT113 `proxy01` zum Backup hinzugefügt
+Stand: 02.05.2026
+
+## DNS-Infrastruktur
+
+### dns-auth-01
+
+- IP: 192.168.1.9
+- Rolle: PowerDNS Primary / Master
+- Betrieb: Docker
+- Container: powerdns
+- Web-GUI: PowerDNS-Admin
+- PowerDNS-Admin URL: http://192.168.1.9:9191
+- PowerDNS API: Port 8081
+- DNS Ports: TCP/UDP 53
+- Datenbank: MariaDB Cluster/VIP 192.168.1.26
+- Status: aktiv
+
+### dns-auth-02
+
+- IP: 192.168.1.8
+- Rolle: PowerDNS Secondary
+- Betrieb: native PowerDNS-Installation
+- Datenbank: lokale MariaDB
+- Sync-Methode: AXFR von dns-auth-01
+- Primary: 192.168.1.9
+- Status: aktiv
+
+## Durchgeführte Änderungen
+
+- dns-auth-01 läuft erfolgreich als Docker-Container.
+- PowerDNS-Admin läuft erfolgreich auf Port 9191.
+- PowerDNS-Admin wurde beschleunigt/repariert.
+- home.app wurde von Native auf Primary/Master gesetzt.
+- dns-auth-02 wurde als Secondary vorbereitet.
+- AXFR/Zone-Transfer von dns-auth-01 zu dns-auth-02 wurde aktiviert.
+- TCP 53 und UDP 53 sind auf dns-auth-01 verfügbar.
+- ns2.home.app wurde angelegt.
+- ns2.home.app zeigt auf 192.168.1.8.
+- ns2.home.app ist auf dns-auth-01 und dns-auth-02 auflösbar.
+- Zone home.app wird erfolgreich auf dns-auth-02 synchronisiert.
