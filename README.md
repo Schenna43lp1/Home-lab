@@ -15,7 +15,6 @@ Dieses Repository dokumentiert die aktuelle Homelab-Umgebung mit Proxmox-Nodes, 
 | `docs/backup-monitoring.md` | Backup- und Monitoring-Übersicht |
 | `docs/todos.md` | Offene Aufgaben und bekannte Probleme |
 | `scripts/list-lxc-ips.sh` | Script zum Auslesen der Container-IPs auf einem Proxmox-Node |
-| `Network diagram` | diagram.png
 
 ## Proxmox Nodes
 
