@@ -6,15 +6,11 @@ Dieses Repository dokumentiert die aktuelle Homelab-Umgebung mit Proxmox-Nodes, 
 
 ## Inhalt
 
-| Datei | Zweck |
-|---|---|
-| `docs/container-uebersicht.md` | Übersicht aller LXC-Container pro Proxmox-Node |
-| `docs/ip-plan.md` | Menschlich lesbarer IP-Plan |
-| `data/ip-plan.csv` | IP-Plan als CSV für Import/Weiterverarbeitung |
-| `docs/dienste.md` | Dienste nach Funktion gruppiert |
-| `docs/backup-monitoring.md` | Backup- und Monitoring-Übersicht |
-| `docs/todos.md` | Offene Aufgaben und bekannte Probleme |
-| `scripts/list-lxc-ips.sh` | Script zum Auslesen der Container-IPs auf einem Proxmox-Node |
+- [container uebersicht](docs/container-uebersicht.md)
+- [IP plan](docs/ip-plan.md)
+- [Dienste](docs/dienste.md)
+- [Monitoring/Backup](docs/backup-monitoring.md)
+- [TODOS](docs/todos.md)
 
 ## Proxmox Nodes
 
@@ -28,7 +24,11 @@ Dieses Repository dokumentiert die aktuelle Homelab-Umgebung mit Proxmox-Nodes, 
 
 Docker-Bridge-IPs wie `172.17.0.1`, `172.18.0.1`, `172.19.0.1` usw. werden nicht im Haupt-IP-Plan geführt. Dokumentiert werden primär die echten LAN-Adressen aus `192.168.1.0/24`.
 
-DHCP Netz `192.168.2.0/24`
+## Backup-Dokumentation
+
+- [Proxmox Backup Server](docs/backup/proxmox-backup-server.md)
+- [Backblaze B2 S3](docs/backup/backblaze-b2-s3.md)
+- [Datastore Sync](docs/backup/datastore-sync.md)
 
 ## Pflege-Regeln
 
