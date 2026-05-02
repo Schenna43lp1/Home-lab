@@ -34,7 +34,6 @@ Diese Datei zeigt, welcher LXC-Container auf welchem Proxmox-Node läuft.
 | 109 | de | running | 192.168.1.91 | Zweck unklar | Nein |
 | 110 | nodjs-dev | running | IP nachtragen | Node.js Dev | Nein |
 | 111 | termix | running | 192.168.1.82 | Web-Terminal / SSH | Mittel |
-| 112 | minio | stopped | - | Object Storage | Nein |
 | 113 | mariadb02 | running | 192.168.1.61 | MariaDB Node 2 | Ja |
 | 115 | proxy02 | running | 192.168.1.24 | HAProxy / Keepalived Backup | Ja |
 | 116 | omada | running | 192.168.1.189 | Omada Controller | Mittel |
@@ -53,7 +52,6 @@ Diese Datei zeigt, welcher LXC-Container auf welchem Proxmox-Node läuft.
 | 104 | dns01 | running | 192.168.1.6 / 192.168.1.20 | DNS02 + Unbound | Ja |
 | 105 | mailarchive01 | running | 192.168.1.125 | Mailarchiv | Mittel |
 | 106 | dns-auth-01 | running | 192.168.1.9 | PowerDNS | Ja |
-| 107 | netbox.app.home | running | 192.168.1.25 | NetBox | Mittel |
 | 109 | homeassistant | running | 192.168.1.18 | Home Assistant | Mittel |
 | 110 | db-backup01 | running | 192.168.1.200 | DB Backup Server | Ja |
 | 111 | apps01 | stopped | - | App-Server | Nein |
