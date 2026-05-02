@@ -11,7 +11,7 @@ Netzbereich: `192.168.1.0/24`
 | 192.168.1.5 | adguard | pve02 | 105 | AdGuard DNS |
 | 192.168.1.6 | dns01 | pve03 | 104 | DNS02 |
 | 192.168.1.9 | dns-auth-01 | pve03 | 106 | PowerDNS |
-| 192.168.1.8 | dns-auth-02 | pve02 | TODO | PowerDNS Secondary |
+| 192.168.1.8 | dns-auth-02 | pve02 | 118 | PowerDNS Secondary |
 | 192.168.1.20 | dns01 | pve03 | 104 | Unbound DNS |
 
 ## Proxmox / Infrastruktur
